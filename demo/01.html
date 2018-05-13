@@ -13,14 +13,14 @@
     <script src="./react.js"></script>
     <script src="./react-dom.js"></script>
     <script>
-        // 声明组件
-        var helloComponent = React.createClass({
+        // 声明组件 组件名首字母大写
+        var HelloComponent = React.createClass({
             render: function () {
                 return React.createElement('h1', null, 'Hello')
             }
         })
         // 渲染 
-        ReactDOM.render(React.createElement(helloComponent, null), document.getElementById("app"))
+        ReactDOM.render(React.createElement(HelloComponent, null), document.getElementById("app"))
     </script>
 </body>
 

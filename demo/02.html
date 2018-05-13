@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./react.js"></script>
+    <script src="./react-dom.js"></script>
+    <script src="https://cdn.bootcss.com/babel-core/5.8.38/browser.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <!-- JSX语法必须设置script属性 -->
+    <script type="text/babel">
+        // 声明组件 组件名首字母大写
+        var HelloComponent = React.createClass({
+            render: function () {
+                // 传入属性的语法支持二元(||&&)/三元(XXX?XXX:XXX)运算符表达式
+                return <h1>hello {this.props.name||'world'}</h1>
+            }
+        })
+        // 渲染 
+        ReactDOM.render(<HelloComponent name="abc"/>, document.getElementById("app"))
+    </script>
+</body>
+
+</html>

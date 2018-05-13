@@ -9,6 +9,17 @@
 3. 单项数据流：React设计者认为数据双向绑定虽然便捷，但在复杂场景下副作用也是很明显，所以React更倾向于单向的数据流动-从父节点传递到子节点。（使用ReactLink也可以实现双向绑定，但不建议使用）
 
 ## 1.基础环境
+
 * html中引入react.js和react-dom.js文件即构成基础环境
-* React.createClass注册一个组件类,通过调用React.createElement('h1', null, 'Hello')生成html内容
+* React.createClass注册一个组件类(组件名需要首字母大写),通过调用React.createElement('h1', null, 'Hello')生成html内容
 * ReactDOM.render是React的最基本方法，用于将模板转为HTML语言，并插入指定的DOM节点
+
+## 2.JSX语法
+
+* JSX即Javascript XML,它使用XML标记来创建虚拟DOM和声明组件,方便开发
+* 使用JSX语法的支持,需要babel进行转换,demo中暂用babel的核心文件browser.js
+* 特点:
+1. 使用熟悉的语法仿照HTML来定义虚拟DOM
+2. 程序代码更加直观
+3. 于JavaScript之间等价转换，代码更加直观
+4. 支持在{}中使用二元(||&&)/三元(XXX?XXX:XXX)运算符表达式,不支持if...else
