@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./react.js"></script>
+    <script src="./react-dom.js"></script>
+    <script src="https://cdn.bootcss.com/babel-core/5.8.38/browser.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <!-- JSX语法必须设置script属性 -->
+    <script type="text/babel">
+        let HelloBox=React.createClass({
+            // render创建组件时是必须的,render函数应该是纯净的(只涉及定义和显示),不应该包含对于(state状态,DOM操作等)更改
+            render:function() {
+                return (
+                    <div>{'hello : '+this.props.dataAttr}</div>
+                )
+            }
+        })
+        // props--父组件传过来的属性(类名,颜色,字体,回调函数等)
+        // state--是当前组件状态(通常会改变)
+        ReactDOM.render(<HelloBox dataAttr="abc"/>,document.getElementById("app"))
+    </script>
+</body>
+
+</html>

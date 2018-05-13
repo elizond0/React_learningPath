@@ -26,7 +26,7 @@
                 this.setState({enable:!this.state.enable})
             },
             render:function(){
-                // 与vue不同,在使用{}传值的时候,没有引号""/''
+                // 与vue不同,在使用{}传值的时候,没有引号""/'',加了会变成字符串
                 return (
                     <p>
                         <input type="text" disabled={this.state.enable}/>

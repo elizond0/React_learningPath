@@ -39,4 +39,12 @@
 * 需要注意的点:
 1. getInitialState函数必须有返回值，可以是null,false,对象
 2. 访问state数据的方法是”this.state.属性名”
-3. 与vue不同,在使用{}传值的时候,没有引号""/''
+3. 与vue不同,在使用{}传值的时候,没有引号""/'',加了会变成字符串
+
+## 5.React组件：props和render
+
+* props和state的区别:
+1. props--父组件传过来的属性(类名,颜色,字体,回调函数等)
+2. state--是当前组件状态(通常会改变)
+* render创建组件时是必须的,render函数的主要流程是检测this.props和this.state,再返回一个单一组件实例
+* render函数应该是纯净的(只涉及定义和显示),不应该(修改组件state,DOM读写操作,浏览器交互等)
