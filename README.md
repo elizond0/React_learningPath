@@ -48,3 +48,16 @@
 2. state--是当前组件状态(通常会改变)
 * render创建组件时是必须的,render函数的主要流程是检测this.props和this.state,再返回一个单一组件实例
 * render函数应该是纯净的(只涉及定义和显示),不应该(修改组件state,DOM读写操作,浏览器交互等)
+
+## 6.React组件：句柄函数(生命周期)
+
+* 一个组件完整的生命周期包含实例化阶段、活动阶段、销毁阶段三个阶段。每个阶段又由相应的方法管理,主要涉及三个动作:
+1. mounting:表示正在挂接虚拟DOM到真实DOM。
+2. updating:表示正在被重新渲染。
+3. unmounting:表示正在将虚拟DOM移除真实DOM。
+* 每个动作术语提供相应函数
+1. componentWillMount()
+2. componentDidMount()
+3. componentWillUpdate(object nextProps, object nextState)
+4. componentDidUpdate(object prevProps, object prevState)
+5. componentWillUnmount()
