@@ -31,3 +31,12 @@
 2. ReactDOM.render是会替换原先的内容的(保留最后一次)
 3. JSX允许直接在模版插入JavaScript变量。如果这个变量是一个数组，则会展开这个数组的所有成员。
 4. 由于JS文件的编译会规则,在return切勿换行
+
+## 4.React组件：state
+
+* React将界面组件看成一个状态机，用户界面拥有不同状态并根据状态进行渲染输出，用户界面和数据始终保持一致。开发者的主要工作就是定义state，并根据不同的state渲染对应的用户界面。
+* react是单向数据流,通知React组件数据发生变化的方法是调用成员函数setState(data,callback)。这个函数会合并data到this.state,并重新渲染组件。渲染完成后，调用可选的callback回调。
+* 需要注意的点:
+1. getInitialState函数必须有返回值，可以是null,false,对象
+2. 访问state数据的方法是”this.state.属性名”
+3. 与vue不同,在使用{}传值的时候,没有引号""/''

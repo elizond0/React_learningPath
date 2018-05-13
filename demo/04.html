@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./react.js"></script>
+    <script src="./react-dom.js"></script>
+    <script src="https://cdn.bootcss.com/babel-core/5.8.38/browser.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <!-- JSX语法必须设置script属性 -->
+    <script type="text/babel">
+        var TextBoxComponent=React.createClass({
+            getInitialState:function(){
+                // getInitialState必须有返回值,可以是null,false,对象
+                return {enable:false}
+            },
+            handleClick:function(event){
+                // 由于react是单向数据流,在数据发生变化时,调用setState更改状态值
+                this.setState({enable:!this.state.enable})
+            },
+            render:function(){
+                // 与vue不同,在使用{}传值的时候,没有引号""/''
+                return (
+                    <p>
+                        <input type="text" disabled={this.state.enable}/>
+                        <button onClick={this.handleClick}>改变input状态</button>
+                    </p>
+                )
+            }
+        })
+        ReactDOM.render(<TextBoxComponent/>,document.getElementById("app"))
+    </script>
+</body>
+
+</html>
