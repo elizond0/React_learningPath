@@ -61,3 +61,9 @@
 3. componentWillUpdate(object nextProps, object nextState)
 4. componentDidUpdate(object prevProps, object prevState)
 5. componentWillUnmount()
+
+## 7.文字闪动练习demo
+
+*  注意事项:
+1. 组件render函数用变量生成行内样式时,需要在{}中传入一个对象,例如div style={{opacity:this.state.opacity}}
+2. 组件内生命周期使用计时器调用匿名函数时,需要绑定this指向,或者使用箭头函数(箭头函数内的this指向的是父执行环境里的this)
