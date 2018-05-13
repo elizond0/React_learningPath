@@ -14,7 +14,7 @@
 * React.createClass注册一个组件类(组件名需要首字母大写),通过调用React.createElement('h1', null, 'Hello')生成html内容
 * ReactDOM.render是React的最基本方法，用于将模板转为HTML语言，并插入指定的DOM节点
 
-## 2.JSX语法
+## 2.JSX语法简介
 
 * JSX即Javascript XML,它使用XML标记来创建虚拟DOM和声明组件,方便开发
 * 使用JSX语法的支持,需要babel进行转换,demo中暂用babel的核心文件browser.js
@@ -23,3 +23,11 @@
 2. 程序代码更加直观
 3. 于JavaScript之间等价转换，代码更加直观
 4. 支持在{}中使用二元(||&&)/三元(XXX?XXX:XXX)运算符表达式,不支持if...else
+
+## 3.JSX数组输出
+
+* 详情可看03.html的demo,在此列出一些需要注意的点:
+1. 数组遍历生成html的时候,需要设置key,用于dom树更新时作为标记
+2. ReactDOM.render是会替换原先的内容的(保留最后一次)
+3. JSX允许直接在模版插入JavaScript变量。如果这个变量是一个数组，则会展开这个数组的所有成员。
+4. 由于JS文件的编译会规则,在return切勿换行
