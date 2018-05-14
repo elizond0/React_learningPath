@@ -86,3 +86,8 @@
 ## 11.React表单:name复用
 
 * 使用name复用，表单控件内必须有name属性,react会对event.target.name和组建方法自动绑定
+
+## 12.React表单:可控组件
+
+* React的State有缓存机制，然后原生input也有自己的缓存机制，这两种缓存机制我们在编码中是要进行取舍的。将input中的value绑定到state的React组件就是可控组件，反之则是不可控组件。
+* 由于react的渲染策略,构成可控表单组件需要onChange事件,并且将value绑定到state中,通过方法和绑定实现"双向绑定"
