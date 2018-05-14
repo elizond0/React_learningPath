@@ -72,3 +72,7 @@
 
 * PropsTypes限定数据类型,例如propTypes:{title:React.PropTypes.string.isRequired},要注意PropTypes首字母大写
 * getDefaultProps设置默认值,getDefaultProps:function(){return {title:"hello"}},传入props后被替换
+
+## 9.React组件：获取真实DOM节点
+
+* 获取真实DOM首先需要在标签内定义ref="key"属性,然后通过组件内的方法(this.refs.[key]])进行业务操作
