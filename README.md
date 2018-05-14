@@ -77,9 +77,12 @@
 
 * 获取真实DOM首先需要在标签内定义ref="key"属性,然后通过组件内的方法(this.refs.[key]])进行业务操作
 
-## 10.表单的事件响应和bind函数复用
+## 10.React表单:事件响应和bind函数复用
 
 * 表单demo详情见10.html,注意事项如下:
 1. react组件内:label标签里的for在react里需要替换成htmlFor;select内option默认选中selected需要替换成defaultValue
 2. html标签内使用bind(this,[传入参数])进行函数复用
 
+## 11.React表单:name复用
+
+* 使用name复用，表单控件内必须有name属性,react会对event.target.name和组建方法自动绑定

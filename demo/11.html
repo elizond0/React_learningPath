@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./react.js"></script>
+    <script src="./react-dom.js"></script>
+    <script src="https://cdn.bootcss.com/babel-core/5.8.38/browser.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <!-- JSX语法必须设置script属性 -->
+    <script type="text/babel">
+        var Form=React.createClass({
+            getInitialState:function(){
+                // 需要用到的字段名,必须先声明,否则会报错(changing a controlled input of type checkbox to be uncontrolled)
+                return {
+                    username:'',
+                    checkStatus:true,
+                    select:'man',
+                }
+            },
+            render:function(){
+                // label标签里的for在react里需要替换成htmlFor  select内option默认选中selected需要替换成defaultValue
+                // html标签内使用bind(this,[传入参数])进行函数复用
+                return (
+                    <form>
+                        <div>
+                            <label htmlFor="username">姓名:</label>
+                            <input type="text" name="username" id="username" value={this.state.username} onChange={this.handleChange}/>                           
+                        </div>
+                        <div>
+                            <label htmlFor="checkbox">是或否:</label>
+                            <input type="checkbox" name="checkStatus" id="checkbox" checked={this.state.checkStatus} onChange={this.handleChange}/>
+                        </div>
+                        <div>
+                            <label htmlFor="select">性别:</label>
+                            <select name="select" value={this.state.select} onChange={this.handleChange}>
+                                <option value="man" defaultValue>男</option>
+                                <option value="woman">女</option>
+                            </select>
+                        </div>
+                        <button type="submit" onClick={this.handleSubmit}>提交</button>
+                    </form>
+                )
+            },
+            handleChange:function(event){
+                var newState={}
+                // react会对event.target.name和组建方法自动绑定，控件内必须有name属性
+                newState[event.target.name]=event.target.name=="checkStatus"?event.target.checked:event.target.value
+                this.setState(newState)
+            },
+            handleSubmit:function(e){
+                e.preventDefault()
+                var name=this.state.username,
+                    is=this.state.checkStatus?"是":"不是",
+                    select=this.state.select=="man"?"男":"女"
+                name?alert(name+is+select):alert("请输入姓名")
+            }
+        })
+        ReactDOM.render(<Form/>,document.getElementById("app"))
+    </script>
+</body>
+
+</html>
