@@ -64,6 +64,11 @@
 
 ## 7.文字闪动练习demo
 
-*  注意事项:
+* 注意事项:
 1. 组件render函数用变量生成行内样式时,需要在{}中传入一个对象,例如div style={{opacity:this.state.opacity}}
-2. 组件内生命周期使用计时器调用匿名函数时,需要绑定this指向,或者使用箭头函数(箭头函数内的this指向的是父执行环境里的this)
+2. 组件内生命周期使用计时器调用匿名函数时,需要绑定this指向,或者使用箭头函数(因为箭头函数内部没有this,箭头函数内的this指向的是父执行环境里的this,同时也不能用作构造函数)
+
+## 8.React组件：props属性验证
+
+* PropsTypes限定数据类型,例如propTypes:{title:React.PropTypes.string.isRequired},要注意PropTypes首字母大写
+* getDefaultProps设置默认值,getDefaultProps:function(){return {title:"hello"}},传入props后被替换

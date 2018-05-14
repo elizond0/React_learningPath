@@ -40,7 +40,8 @@
                 //     })
                 // }.bind(this),100)
                 // setInterval中的匿名函数this指向window,需要绑定this到是组件实例上,也可以使用箭头函数替代
-                // 箭头函数的this指向与匿名函数不同,指向的是父执行环境里的this,在此指向的是setInterval的父层,即react实例
+                // 箭头函数的this指向与匿名函数不同,在此指向的是setInterval的父层,即react实例
+                // 因为箭头函数内部没有this,箭头函数内的this指向的是父执行环境里的this,同时也不能用作构造函数
                 setInterval(()=>{
                     var tmpOpacity=this.state.opacity
                     tmpOpacity-=0.05
